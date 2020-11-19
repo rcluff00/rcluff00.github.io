@@ -22,13 +22,14 @@ function isInView(elem){
 
 var $modal = $("#modal");
 var $img = $("#img-for-modal");
+var $imgClick = $("#img-click");
 var $modalImg = $("#img01");
 var $captionText = $("#modal-caption")
 
-$img.on("click", function(){
+$imgClick.on("click", function(){
     $modal.css("display", "block")
-    $modalImg.attr("src", this.src);
-    $captionText.html(this.alt);
+    $modalImg.attr("src", $img.attr("src"));
+    $captionText.html($img.attr("alt"));
 });
 
 // Get the <span> element that closes the modal
